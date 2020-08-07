@@ -83,5 +83,9 @@
             valuePort4: {value:"*"},
         },
         label: function() { return this.name || "" },
+        oneditresize: function() {
+            console.log("oiiiiiiiiiiiiiiiii")
+            $("#red-ui-editor-config-scope").val($("#red-ui-editor-config-scope option:first").val());
+        },
     });
 </script>

@@ -1,6 +1,6 @@
 {
   "name": "qm-ac-power-set-voltage-mapping",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Mapping Set voltage | AC Power Source Module | Node-RED",
   "main": "mapping-voltage.js",
   "scripts": {
