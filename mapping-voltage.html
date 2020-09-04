@@ -1,88 +1,171 @@
 <style>
     /* COPIAR ESSE PEDAÇO DO NAME UNIVERSAL  */
-    .columm{
+    
+    .columm {
         display: flex !important;
         flex-direction: column !important;
     }
-
-
-    .hr-full{
+    
+    .hr-full {
         width: 100% !important;
     }
     /* ATE AQUI  */
-
-    .label-resp-mapVoltage{
-        width: 15% !important;
+    
+    .label-resp-mapVoltage {
+        width: 120px !important;
     }
-
-    .input-resp-mapVoltage{
-        width: 27% !important;
+    
+    .input-resp-mapVoltage {
+        width: 100% !important;
         /* margin-left: -45px !important; */
     }
-
-
 </style>
 
 <script type="text/html" data-template-name="mapping-voltage">
     <div class="form-row columm">
-        <label  for="node-config-input-name"><i class="fa fa-tag"></i> Mapping Name</label>
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Mapping Name</label>
         <input type="text" id="node-config-input-name" style="width:80%;">
     </div>
     <div class="form-row columm">
-        <label  for="node-config-input-slot"><i class="fa fa-sliders"></i> Slot</label>
+        <label for="node-config-input-slot"><i class="fa fa-sliders"></i> Slot</label>
         <input min="0" type="number" id="node-config-input-slot" style="width:20%;">
     </div>
     <hr class="hr-full">
     <h2>SLOT 1 AC Power modular mapping - set voltage</h2>
-    <div class="form-row">
-        <!-- <label for="node-config-input-labelPort1"><i class="fa fa-tags"></i> Label</label> -->
-        <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> VA -  </label><input type="text"   id="node-config-input-labelPort1" class="input-resp-mapVoltage">
-        <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort1"><i class="fa fa-pencil"></i> Value</label>
-        <input type="text"   id="node-config-input-valuePort1" class="input-resp-mapVoltage"> -->
+
+
+    <div class="form-row" style="    display: flex; justify-content: space-between;">
+        <!-- <div class="label-resp-mapVoltage" style="float: left;">
+            <span>
+                Jig conector's pins
+            </span>
+        </div>
+        <div style="float: left;">
+            <span>
+                Board Interface (TP or Connector)
+            </span>
+        </div>
+        <div  style="margin-left: 20px !important; float: left;">
+            <span>
+                User Label
+            </span>
+        </div> -->
+
+  
+
+        <div class="form-row columm" style="width: 30%; float: left;">
+            <!-- <label for="node-config-input-labelPort1"><i class="fa fa-tags"></i> Label</label> -->
+            <div style="text-align: center; margin-bottom: 28px;">
+                <span>
+                    Jig conector's pins
+                </span>
+            </div>
+            <label style="margin-top: 10px; text-align: center;" ><i class="fa fa-tag"></i> VA - PIN - X</label>
+            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> VB - PIN - X</label>
+            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> VC - PIN - X</label>
+
+            <!-- <input type="text" id="node-config-input-labelPort1" class="input-resp-mapVoltage"> -->
+            <!-- <input  type="text" id="node-config-input-labelPort1A" class="input-resp-mapVoltage"> -->
+            
+            <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort1"><i class="fa fa-pencil"></i> Value</label>
+            <input type="text"   id="node-config-input-valuePort1" class="input-resp-mapVoltage"> -->
+        </div>
+        <div class="form-row columm" style="width: 30%; float: left;">
+            <!-- <label for="node-config-input-labelPort2"><i class="fa fa-tags"></i> Label</label> -->
+            <!-- <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> VB - PIN - X</label> -->
+            <div style="text-align: center;">
+                <span>
+                    Board Interface <br> (TP or Connector)
+                </span>
+            </div>
+            <input style="margin-bottom: 15px; margin-top: 10px;" type="text" id="node-config-input-labelPort1" class="input-resp-mapVoltage">
+            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelPort2" class="input-resp-mapVoltage">
+            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelPort3" class="input-resp-mapVoltage">
+            <!-- <input type="text" id="node-config-input-labelPort2A" class="input-resp-mapVoltage"> -->
+            <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort2"><i class="fa fa-pencil"></i> Value</label>
+            <input type="text"   id="node-config-input-valuePort2" class="input-resp-mapVoltage"> -->
+        </div>
+        <div class="form-row columm" style="width: 30%; float: left;">
+            <!-- <label for="node-config-input-labelPort3"><i class="fa fa-tags"></i> Label</label> -->
+            <!-- <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> VC - PIN - X</label> -->
+            <!-- <input type="text" id="node-config-input-labelPort3" class="input-resp-mapVoltage"> -->
+            <div style="text-align: center;">
+                <span>
+                    User Label
+                </span>
+            </div>
+            <input style="margin-bottom: 15px; margin-top: 30px;" type="text" id="node-config-input-labelPort2A" class="input-resp-mapVoltage">
+            <input style="margin-bottom: 15px;"  type="text" id="node-config-input-labelPort1A" class="input-resp-mapVoltage">
+            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelPort3A" class="input-resp-mapVoltage">
+
+            <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort3"><i class="fa fa-pencil"></i> Value</label>
+            <input type="text"   id="node-config-input-valuePort3" class="input-resp-mapVoltage"> -->
+        </div>
+
     </div>
-    <div class="form-row">
-        <!-- <label for="node-config-input-labelPort2"><i class="fa fa-tags"></i> Label</label> -->
-        <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> VB - </label><input type="text"   id="node-config-input-labelPort2" class="input-resp-mapVoltage">
-        <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort2"><i class="fa fa-pencil"></i> Value</label>
-        <input type="text"   id="node-config-input-valuePort2" class="input-resp-mapVoltage"> -->
-    </div>
-    <div class="form-row">
-        <!-- <label for="node-config-input-labelPort3"><i class="fa fa-tags"></i> Label</label> -->
-        <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> VC - </label><input type="text"   id="node-config-input-labelPort3" class="input-resp-mapVoltage">
-        <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort3"><i class="fa fa-pencil"></i> Value</label>
-        <input type="text"   id="node-config-input-valuePort3" class="input-resp-mapVoltage"> -->
-    </div>
-    <div class="form-row">
+    <!-- <div class="form-row"> -->
         <!-- <label for="node-config-input-labelPort4"><i class="fa fa-tags"></i> Label</label> -->
-        <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> IABC - </label><input type="text"   id="node-config-input-labelPort4" class="input-resp-mapVoltage">
+        <!-- <label class="label-resp-mapVoltage"><i class="fa fa-tag"></i> IABC - </label><input type="text" id="node-config-input-labelPort4" class="input-resp-mapVoltage"> -->
         <!-- <label style="margin-left:100px" style="margin-left:100px" for="node-config-input-valuePort4"><i class="fa fa-pencil"></i> Value</label>
         <input type="text"   id="node-config-input-valuePort4" class="input-resp-mapVoltage"> -->
-    </div>
-    </script>
+    <!-- </div> -->
+</script>
 
 <script type="text/html" data-help-name="mapping-voltage">
     <p>working on it...</p>
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('mapping-voltage',{
+    RED.nodes.registerType('mapping-voltage', {
         category: 'config',
         defaults: {
-            name:{value:""},
-            slot:{value:"", required:true},
-            labelPort1: {value:""},
-            valuePort1: {value:"A"},
+            name: {
+                value: ""
+            },
+            slot: {
+                value: "",
+                required: true
+            },
+            labelPort1: {
+                value: ""
+            },
+            labelPort1A: {
+                value: ""
+            },
+            valuePort1: {
+                value: "A"
+            },
 
-            labelPort2: {value:""},
-            valuePort2: {value:"B"},
+            labelPort2A: {
+                value: ""
+            },
+            labelPort2: {
+                value: ""
+            },
+            valuePort2: {
+                value: "B"
+            },
 
-            labelPort3: {value:""},
-            valuePort3: {value:"C"},
-            
-            labelPort4: {value:""},
-            valuePort4: {value:"*"},
+            labelPort3A: {
+                value: ""
+            },
+            labelPort3: {
+                value: ""
+            },
+            valuePort3: {
+                value: "C"
+            },
+
+            labelPort4: {
+                value: ""
+            },
+            valuePort4: {
+                value: "*"
+            },
         },
-        label: function() { return this.name || "" },
+        label: function() {
+            return this.name || ""
+        },
         oneditresize: function() {
             console.log("oiiiiiiiiiiiiiiiii")
             $("#red-ui-editor-config-scope").val($("#red-ui-editor-config-scope option:first").val());
