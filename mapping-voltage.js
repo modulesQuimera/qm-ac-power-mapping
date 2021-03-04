@@ -5,20 +5,35 @@ module.exports = function(RED) {
         this.name = config.name;
         this.slot = config.slot;
 
-        this.labelPort1A = config.labelPort1A;
-        this.labelPort1 = config.labelPort1;
-        this.valuePort1 = config.valuePort1;
+        this.connectorVA = config.connectorVA;
+        this.labelVA = config.labelVA;
 
-        this.labelPort2A = config.labelPort2A;
-        this.labelPort2 = config.labelPort2;
-        this.valuePort2 = config.valuePort2;
+        this.connectorVN = config.connectorVN;  
+        this.labelVN = config.labelVN;
+        
+        this.connectorVB = config.connectorVB; 
+        this.labelVB = config.labelVB;
 
-        this.labelPort3A = config.labelPort3A;
-        this.labelPort3 = config.labelPort3;
-        this.valuePort3 = config.valuePort3;
+        this.connectorVC = config.connectorVC;
+        this.labelVC = config.labelVC;
 
-        this.labelPort4 = config.labelPort4;
-        this.valuePort4 = config.valuePort4;
+        this.connectorIAp = config.connectorIAp;
+        this.labelIAp = config.labelIAp;
+
+        this.connectorIAm = config.connectorIAm;
+        this.labelIAm = config.labelIAm;
+
+        this.connectorIBp = config.connectorIBp;
+        this.labelIBp = config.labelIBp;
+
+        this.connectorIBm = config.connectorIBm;
+        this.labelIBm = config.labelIBm;
+
+        this.connectorICp = config.connectorICp;
+        this.labelICp = config.labelICp;
+
+        this.connectorICm = config.connectorICm;
+        this.labelICm = config.labelICm;
 
         var globalContext = this.context().global;
         var map = globalContext.get("map");
@@ -28,17 +43,44 @@ module.exports = function(RED) {
             map.ac_power[this.slot - 1][0].board =  "";
             map.ac_power[this.slot - 1][0].user = "";
     
-            map.ac_power[this.slot - 1][1].pin =  "VA - PIN - 12";
-            map.ac_power[this.slot - 1][1].board =  "TP" + String(this.labelPort1);
-            map.ac_power[this.slot - 1][1].user = this.labelPort1A;
+            map.ac_power[this.slot - 1][1].pin =  "VA - PIN - 3";
+            map.ac_power[this.slot - 1][1].board =  "TP" + String(this.connectorVA);
+            map.ac_power[this.slot - 1][1].user = this.labelVA;
     
-            map.ac_power[this.slot - 1][2].pin =  "VB - PIN - 13";
-            map.ac_power[this.slot - 1][2].board =  "TP" + String(this.labelPort2);
-            map.ac_power[this.slot - 1][2].user = this.labelPort2A;
+            map.ac_power[this.slot - 1][2].pin =  "VB - PIN - 2";
+            map.ac_power[this.slot - 1][2].board =  "TP" + String(this.connectorVB);
+            map.ac_power[this.slot - 1][2].user = this.labelVB;
     
-            map.ac_power[this.slot - 1][3].pin =  "VC - PIN - 14";
-            map.ac_power[this.slot - 1][3].board =  "TP" + String(this.labelPort3);
-            map.ac_power[this.slot - 1][3].user = this.labelPort3A;   
+            map.ac_power[this.slot - 1][3].pin =  "VC - PIN - 3";
+            map.ac_power[this.slot - 1][3].board =  "TP" + String(this.connectorVC);
+            map.ac_power[this.slot - 1][3].user = this.labelVC;
+
+            map.ac_power[this.slot - 1][4].pin =  "IA+ - PIN - 1";
+            map.ac_power[this.slot - 1][4].board =  "TP" + String(this.connectorIAp);
+            map.ac_power[this.slot - 1][4].user = this.labelIAp;
+            
+            map.ac_power[this.slot - 1][5].pin =  "IA- - PIN - 2";
+            map.ac_power[this.slot - 1][5].board =  "TP" + String(this.connectorIAm);
+            map.ac_power[this.slot - 1][5].user = this.labelIAm;
+
+            map.ac_power[this.slot - 1][6].pin =  "IB+ - PIN - 1";
+            map.ac_power[this.slot - 1][6].board =  "TP" + String(this.connectorIBp);
+            map.ac_power[this.slot - 1][6].user = this.labelIBp;
+
+            map.ac_power[this.slot - 1][7].pin =  "IB- - PIN - 2";
+            map.ac_power[this.slot - 1][7].board =  "TP" + String(this.connectorIBm);
+            map.ac_power[this.slot - 1][7].user = this.labelIBm;
+
+            map.ac_power[this.slot - 1][8].pin =  "IC+ - PIN - 1";
+            map.ac_power[this.slot - 1][8].board =  "TP" + String(this.connectorICp);
+            map.ac_power[this.slot - 1][8].user = this.labelICp;
+
+
+            // map.ac_power[this.slot - 1][9].pin =  "IC- - PIN - 2";
+            // map.ac_power[this.slot - 1][9].board =  "TP" + String(this.connectorICm);
+            // map.ac_power[this.slot - 1][9].user = this.labelICm;
+
+          
         }
 
 
