@@ -1,14 +1,14 @@
 {
   "name": "qm-ac-power-set-voltage-mapping",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Mapping Set voltage | AC Power Source Module | Node-RED",
-  "main": "mapping-voltage.js",
+  "main": "ac-power-mapping.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modulesQuimera/qm-hub-ac-power-set-voltage-mapping.git"
+    "url": "git+https://github.com/modulesQuimera/qm-ac-power-mapping.git"
   },
   "keywords": ["quimera","Hub","JIG"],
   "author": "HUB-LSE",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/modulesQuimera/qm-hub-ac-power-set-voltage-mapping#readme",
   "node-red": {
 		"nodes": {
-			"mapping-voltage": "mapping-voltage.js"
+			"ac-power-mapping": "ac-power-mapping.js"
 		}
 	}
 }
