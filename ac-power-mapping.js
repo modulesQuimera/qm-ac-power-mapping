@@ -5,42 +5,35 @@ module.exports = function(RED) {
         this.name = config.name;
         this.slot = config.slot;
 
-        this.connectorVA = config.connectorVA;
-        this.labelVA = config.labelVA;
         this.connectorVN = config.connectorVN;  
-        this.labelVN = config.labelVN;
+        this.connectorVA = config.connectorVA;
         this.connectorVB = config.connectorVB; 
-        this.labelVB = config.labelVB;
         this.connectorVC = config.connectorVC;
-        this.labelVC = config.labelVC;
+
         this.connectorIAp = config.connectorIAp;
-        this.labelIAp = config.labelIAp;
         this.connectorIAm = config.connectorIAm;
-        this.labelIAm = config.labelIAm;
         this.connectorIBp = config.connectorIBp;
-        this.labelIBp = config.labelIBp;
         this.connectorIBm = config.connectorIBm;
-        this.labelIBm = config.labelIBm;
         this.connectorICp = config.connectorICp;
-        this.labelICp = config.labelICp;
         this.connectorICm = config.connectorICm;
-        this.labelICm = config.labelICm;
         
         var globalContext = this.context().global;
         var map = globalContext.get("map");
 
         var map_ac_power = [
 
-            { feat: `AC-POWER Slot ${config.slot}`, pin: "", board: `Voltage Limit: ${config.voltage_limit}`, user: `Current Limit: ${config.current_limit}` },
-            { feat: "VA", pin: "PIN3", board: `TP ${config.connectorVA}`, user: config.labelVA },
-            { feat: "VB", pin: "PIN2", board: `TP ${config.connectorVB}`, user: config.labelVB },
-            { feat: "VC", pin: "PIN3", board: `TP ${config.connectorVC}`, user: config.labelVC },
-            { feat: "IA+", pin: "PIN1", board: `TP ${config.connectorIAp}`, user: config.labelIAp },
-            { feat: "IA-", pin: "PIN2", board: `TP ${config.connectorIAm}`, user: config.labelIAm },
-            { feat: "IB+", pin: "PIN1", board: `TP ${config.connectorIBp}`, user: config.labelIBp },
-            { feat: "IB-", pin: "PIN2", board: `TP ${config.connectorIBm}`, user: config.labelIBm },
-            { feat: "IC+", pin: "PIN1", board: `TP ${config.connectorICp}`, user: config.labelICp },
-            { feat: "IC-", pin: "PIN2", board: `TP ${config.connectorICm}`, user: config.labelICm }
+            { feat: `AC POWER INSTANCE ${config.slot}`, pin: `VL: ${config.voltage_limit}`, board: `IL: ${config.current_limit}` },
+            { feat: "VN", pin: "PIN 1", board: `TP ${config.connectorVN}` },
+            { feat: "VA", pin: "PIN 2", board: `TP ${config.connectorVA}` },
+            { feat: "VB", pin: "PIN 3", board: `TP ${config.connectorVB}` },
+            { feat: "VC", pin: "PIN 4", board: `TP ${config.connectorVC}` },
+
+            { feat: "IA+", pin: "PIN 2", board: `TP ${config.connectorIAp}` },
+            { feat: "IA-", pin: "PIN 1", board: `TP ${config.connectorIAm}` },
+            { feat: "IB+", pin: "PIN 2", board: `TP ${config.connectorIBp}` },
+            { feat: "IB-", pin: "PIN 1", board: `TP ${config.connectorIBm}` },
+            { feat: "IC+", pin: "PIN 2", board: `TP ${config.connectorICp}` },
+            { feat: "IC-", pin: "PIN 1", board: `TP ${config.connectorICm}` }
             
         ];
 

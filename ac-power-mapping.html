@@ -1,144 +1,12 @@
-<style>
-    /* COPIAR ESSE PEDAÇO DO NAME UNIVERSAL  */
-    .columm { display: flex !important; flex-direction: column !important; }
-    .columm-70 { display: flex !important; width: 70% !important; flex-direction: column !important; }
-    .row { display: flex; flex-direction: row;}
-    .hr-full { width: 100% !important; }
-    /* ATE AQUI  */
-    .label-resp-mapVoltage { width: 120px !important; }
-    .input-resp-mapVoltage { width: 100% !important; }
-</style>
-
-<script type="text/html" data-template-name="ac-power-mapping">
-    <div class="form-row columm">
-        <label for="node-config-input-name"><i class="fa fa-tag"></i> Mapping Name</label>
-        <input type="text" id="node-config-input-name" style="width:80%;">
-    </div>
-    <div class="row">
-        <div class="form-row columm" style="width: 20%;">
-            <label for="node-config-input-slot"><i class="fa fa-sliders"></i> Instance</label>
-            <input min="1" max="9" type="number" id="node-config-input-slot" style="width:70%;">
-        </div>
-        <div class="form-row columm" style="width: 27%;">
-            <label for="node-config-input-slot"><i class="fa fa-bolt"></i> Voltage Limit</label>
-            <input min="0" type="number" id="node-config-input-voltage_limit" style="width: 82%;">
-        </div>
-        <div class="form-row columm">
-            <label for="node-config-input-slot"><i class="fa fa-bolt"></i> Current Limit</label>
-            <input min="0" type="number" id="node-config-input-current_limit" style="width: 64%;">
-        </div>
-    </div>
-
-    <hr class="hr-full">
-    <h2 id="SLOT"></h2>
-    <h3>Connector CN12 - CTRL_BOARD</h3>
-    <div class="form-row" style="display: flex; justify-content: space-between;">
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 28px;">
-                <span> Jig conector's pins </span>
-            </div>
-            <label style="margin-top: 10px; text-align: center;" ><i class="fa fa-tag"></i> VN - Pin - 2</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> VA - Pin - 3</label>
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 9px;">
-                <span> Board Interface <br> (TP or Connector) </span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorVN" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorVA" class="input-resp-mapVoltage">
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center;  margin-bottom: 28px;">
-                <span> User Label </span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelVN" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelVA" class="input-resp-mapVoltage">
-
-        </div>
-    </div>
-    <h3> Connector CN15 - CTRL_BOARD </h3>
-    <div class="form-row" style="    display: flex; justify-content: space-between;">
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 12px;">
-                <span> Jig conector's pins </span>
-            </div>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> VB - Pin - 2</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> VC - Pin - 3</label>
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 9px;">
-                <span> Board Interface <br> (TP or Connector)</span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorVB" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorVC" class="input-resp-mapVoltage">
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center;  margin-bottom: 28px;">
-                <span> User Label </span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelVB" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelVC" class="input-resp-mapVoltage">
-
-        </div>
-    </div>
-    <h3> Connector CN1 – CURRENT_SHIELD </h3>
-    <div class="form-row" style="    display: flex; justify-content: space-between;">
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 12px;">
-                <span> Jig conector's pins </span>
-            </div>
-           
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IA+ - Pin - 1</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IA- - Pin - 2</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IB+ - Pin - 1</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IB- - Pin - 2</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IC+ - Pin - 1</label>
-            <label style="margin-top: 26px; text-align: center;" ><i class="fa fa-tag"></i> IC- - Pin - 2</label>
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center; margin-bottom: 9px;">
-                <span> Board Interface <br> (TP or Connector) </span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorIAp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorIAm" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorIBp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorIBm" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorICp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-connectorICm" class="input-resp-mapVoltage">
-
-        </div>
-        <div class="form-row columm" style="width: 30%; float: left;">
-            <div style="text-align: center;  margin-bottom: 28px;">
-                <span> User Label </span>
-            </div>
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelIAp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelIAm" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelIBp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelIBm" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelICp" class="input-resp-mapVoltage">
-            <input style="margin-bottom: 15px;" type="text" id="node-config-input-labelICm" class="input-resp-mapVoltage">
-
-        </div>
-    </div>
-</script>
-
-<script type="text/html" data-help-name="ac-power-mapping">
-    <p>working on it...</p>
-</script>
 
 <script type="text/javascript">
     RED.nodes.registerType('ac-power-mapping', {
         category: 'config',
         defaults: {
             name: { value: "" },
-            slot: { value: "", required: true },
-            voltage_limit: { value: "", required: true },
-            current_limit: { value: "", required: true },
+            slot: { value: "1", required: true },
+            voltage_limit: { value: "300", required: true },
+            current_limit: { value: "20", required: true },
 
             connectorVA: { value: "" },
             labelVA: { value: ""},
@@ -178,7 +46,105 @@
             $("#red-ui-editor-config-scope").val($("#red-ui-editor-config-scope option:first").val());
         },
         oneditprepare: function() {
-            $("#SLOT").text(`SLOT ${this.slot != undefined ? this.slot : "" } AC Power modular mapping`);
+            $("#SLOT").text(`INSTANCE ${this.slot != undefined ? this.slot : "" } AC Power Modular mapping`);
         },
     });
+</script>
+<style>
+    /* COPIAR ESSE PEDAÇO DO NAME UNIVERSAL  */
+    .columm { display: flex !important; flex-direction: column !important; }
+    .columm-70 { display: flex !important; width: 70% !important; flex-direction: column !important; }
+    .row { display: flex; flex-direction: row;}
+    .form-row-x { display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin: 5px 0px}
+    .hr-full { width: 100% !important; }
+    /* ATE AQUI  */
+    .label-resp-mapVoltage { width: 120px !important; }
+    .input-resp-mapVoltage { width: 100% !important; }
+</style>
+
+<script type="text/html" data-template-name="ac-power-mapping">
+    <div class="form-row columm">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Mapping Name</label>
+        <input type="text" id="node-config-input-name" style="width:80%;">
+    </div>
+    <div class="row">
+        <div class="form-row columm" style="width: 20%;">
+            <label for="node-config-input-slot" style="text-align: left !important; margin: 0px !important;"><i class="fa fa-sliders"></i> Instance</label>
+            <input min="1" max="9" type="number" id="node-config-input-slot" style="width:70%;">
+        </div>
+        <div class="form-row columm" style="width: 27%;">
+            <label for="node-config-input-slot" style="text-align: left !important; margin: 0px !important;"><i class="fa fa-bolt"></i> Voltage Limit</label>
+            <input min="0" type="number" id="node-config-input-voltage_limit" style="width: 82%;">
+        </div>
+        <div class="form-row columm">
+            <label for="node-config-input-slot" style="text-align: left !important; margin: 0px !important;"><i class="fa fa-bolt"></i> Current Limit</label>
+            <input min="0" type="number" id="node-config-input-current_limit" style="width: 64%;">
+        </div>
+    </div>
+
+    <hr class="hr-full">
+    <h2 id="SLOT"></h2>
+    <h3>Connector CN12 - VOLTAGE_BOARD</h3>
+    <div class="form-row">
+        <div class="form-row-x">
+            <span> Jig interface </span>
+            <span style="margin-right: 13px;"> Board Interface (TP or Connector) </span>
+        </div>
+        <div class="form-row-x">
+            <label><i c<i class="fa fa-microchip"></i></i> VN - PIN - 1</label>
+            <input type="text" id="node-config-input-connectorVN" class="input-resp-mapVoltage">
+        </div>
+        <div class="form-row-x">
+            <label><i class="fa fa-microchip"></i> VA - PIN - 2</label>
+            <input type="text" id="node-config-input-connectorVA" class="input-resp-mapVoltage">
+        </div>
+        <div class="form-row-x">
+            <label><i class="fa fa-microchip"></i> VB - PIN - 3</label>
+            <input type="text" id="node-config-input-connectorVB" class="input-resp-mapVoltage">
+        </div>
+        <div class="form-row-x">
+            <label><i class="fa fa-microchip"></i> VC - PIN - 4</label>
+            <input type="text" id="node-config-input-connectorVC" class="input-resp-mapVoltage">
+        </div>
+    
+    </div>
+    <h3> Connector CN1 – CURRENT_SHIELD </h3>
+    <div class="form-row">
+        <div class="form-row-x">
+            <span> Jig interface </span>
+            <span style="margin-right: 13px;"> Board Interface (TP or Connector) </span>
+        </div>
+        <div class="form-row columm">
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IA+ - PIN - 2</label>
+                <input type="text" id="node-config-input-connectorIAp" class="input-resp-mapVoltage">
+            </div>
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IA- - PIN - 1</label>
+                <input type="text" id="node-config-input-connectorIAm" class="input-resp-mapVoltage">
+
+            </div>
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IB+ - PIN - 2</label>
+                <input type="text" id="node-config-input-connectorIBp" class="input-resp-mapVoltage">
+            </div>
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IB- - PIN - 1</label>
+                <input type="text" id="node-config-input-connectorIBm" class="input-resp-mapVoltage">
+            </div>
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IC+ - PIN - 2</label>
+                <input type="text" id="node-config-input-connectorICp" class="input-resp-mapVoltage">
+            </div>
+            <div class="form-row-x">
+                <label><i class="fa fa-microchip"></i> IC- - PIN - 1</label>
+                <input type="text" id="node-config-input-connectorICm" class="input-resp-mapVoltage">
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ac-power-mapping">
+    <p>working on it...</p>
 </script>
